@@ -1,0 +1,25 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+canvas {
+	display: block;
+}
+
+.clear {
+	position: fixed;
+	display: block;
+	left: 50px;
+	bottom: 50px;
+	border: 1px solid #555;
+	color: #555;
+	border-radius: 5px;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+
+.clear:hover {
+	background: #d0d0cc
+}
