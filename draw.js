@@ -9,10 +9,8 @@ canvas.height = window.innerHeight
 
 ctx.lineWidth = 10
 
-// ctx.fillStyle = 'magenta'
-// ctx.fillRect(0, 0, canvas.width, canvas.height)
-
 $clear.onclick = () => {
+	ctx.fillStyle = 'white'
 	ctx.clearRect(0, 0, canvas.width, canvas.height)
 }
 
