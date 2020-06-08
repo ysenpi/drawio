@@ -23,3 +23,71 @@ canvas {
 .clear:hover {
 	background: #d0d0cc
 }
+
+.palete-btn {
+	padding: 15px;
+	background-color: #000;
+	border-radius: 50%;
+	position: fixed;
+	display: block;
+	bottom: 50px;
+	left: 150px;
+	cursor: pointer;
+	border: 1px #ddd solid;
+}
+
+.palete {
+	display: flex;
+	position: absolute;
+	padding: 15px;
+	bottom: 50px;
+	/*left: 20px;*/
+	background-color: #ddd;
+	min-width: 300px;
+	min-height: 300px;
+	border-radius: 10px;
+	opacity: .8;
+	flex-direction: row;
+  justify-content: flex-start;
+}
+
+.palete > * {
+	height: 15px;
+	padding: 15px;
+	margin-right: 15px;
+	background-color: #000;
+	border-radius: 50%;
+	display: block;
+	cursor: pointer;
+}
+
+.hide {
+	display: none;
+}
+
+.red {
+ background-color: red;
+}
+
+.orange {
+ background-color: orange;
+}
+
+.blue {
+ background-color: blue;
+}
+
+.white {
+ background-color: #fff;
+}
+
+.yellow {
+ background-color: yellow;
+}
+.black {
+ background-color: #000;
+}
+
+.green {
+	background-color: green;
+}
