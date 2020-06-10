@@ -5,11 +5,13 @@ let $paleteBtn = document.querySelector('.palete-btn')
 let $palete = document.querySelector('.palete')
 
 let isMouseDown = false
+let isMouseLeave = false
 
 canvas.width = window.innerWidth
 canvas.height = window.innerHeight
 
 ctx.lineWidth = 10
+ctx.lineCap = 'round'
 
 $clear.onclick = () => {
   ctx.fillStyle = 'white'
@@ -35,9 +37,20 @@ canvas.addEventListener('mouseup', (e) => {
   ctx.beginPath()
 })
 
-// canvas.addEventListener('mouseleave', () => {
-//   isMouseDown = false
-// })
+canvas.addEventListener('mouseleave', () => {
+  if (isMouseDown) {
+    isMouseDown = false
+    isMouseLeave = true
+    ctx.beginPath()
+  }
+})
+
+canvas.addEventListener('mouseenter', () => {
+  if (isMouseLeave) {
+    isMouseDown = true
+    isMouseLeave = false
+  }
+})
 
 canvas.addEventListener('mousemove', (e) => {
   if (isMouseDown) {

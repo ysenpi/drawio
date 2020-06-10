@@ -21,7 +21,7 @@ canvas {
 }
 
 .clear:hover {
-	background: #d0d0cc
+	background: #e8e8f3
 }
 
 .palete-btn {
@@ -42,13 +42,19 @@ canvas {
 	padding: 15px;
 	bottom: 50px;
 	/*left: 20px;*/
-	background-color: #ddd;
+	background-color: #e8e8f3;
 	min-width: 300px;
 	min-height: 300px;
 	border-radius: 10px;
 	opacity: .8;
 	flex-direction: row;
   justify-content: flex-start;
+	box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
+	-7px -7px 20px rgba(255, 255, 255, 1),
+	inset 0px 0px 4px rgba(255, 255, 255, 0.2),
+	inset 7px 7px 15px rgba(55, 84, 170, 0),
+	inset -7px -7px 20px rgba(255, 255, 255, 0),
+	0px 0px 4px rgba(255, 255, 255, 0);
 }
 
 .palete > * {
