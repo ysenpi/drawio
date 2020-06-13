@@ -3,15 +3,22 @@ let ctx = canvas.getContext('2d')
 let $clear = document.querySelector('.clear')
 let $paleteBtn = document.querySelector('.palete-btn')
 let $palete = document.querySelector('.palete')
+let $range = document.getElementById('volume')
+let $rangeLabel = document.querySelector('.range label')
+
 
 let isMouseDown = false
 let isMouseLeave = false
 
-canvas.width = window.innerWidth
-canvas.height = window.innerHeight
+// canvas.width = window.innerWidth
+// canvas.height = window.innerHeight
+
+canvas.width = document.documentElement.clientWidth
+canvas.height = document.documentElement.clientHeight
 
 ctx.lineWidth = 10
 ctx.lineCap = 'round'
+ctx.lineJoin = 'round'
 
 $clear.onclick = () => {
   ctx.fillStyle = 'white'
@@ -28,28 +35,36 @@ $palete.addEventListener('click', (e) => {
   ctx.strokeStyle = color
 })
 
-canvas.addEventListener('mousedown', (e) => {
-  isMouseDown = true
-})
-
-canvas.addEventListener('mouseup', (e) => {
-  isMouseDown = false
-  ctx.beginPath()
-})
-
-canvas.addEventListener('mouseleave', () => {
-  if (isMouseDown) {
-    isMouseDown = false
-    isMouseLeave = true
-    ctx.beginPath()
-  }
+$range.addEventListener('input', function(e) {
+  console.log(this.value)
+  $rangeLabel.textContent = this.value
+  ctx.lineWidth = this.value
 })
 
 canvas.addEventListener('mouseenter', () => {
   if (isMouseLeave) {
     isMouseDown = true
     isMouseLeave = false
+    ctx.beginPath()
   }
+})
+
+canvas.addEventListener('mouseleave', () => {
+  if (isMouseDown) {
+    isMouseDown = false
+    isMouseLeave = true
+//     ctx.beginPath()
+  }
+})
+
+canvas.addEventListener('mousedown', (e) => {
+  isMouseDown = true
+  ctx.beginPath()
+})
+
+canvas.addEventListener('mouseup', (e) => {
+  isMouseDown = false
+  ctx.beginPath()
 })
 
 canvas.addEventListener('mousemove', (e) => {

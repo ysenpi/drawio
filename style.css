@@ -67,6 +67,13 @@ canvas {
 	cursor: pointer;
 }
 
+.range {
+	position: fixed;
+	display: block;
+	left: 250px;
+	bottom: 50px;
+}
+
 .hide {
 	display: none;
 }
